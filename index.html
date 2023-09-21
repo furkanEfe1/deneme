@@ -10,19 +10,22 @@
             justify-content: center;
             background-color: black;
             overflow: hidden;
+            width: 700px;
+            height: 700px;
         }
 
         .container {
             font-size: 10px;
-            width: 40em;
-            height: 40em;
+            width: 70em;
+            height: 70em;
             position: relative;
+            margin: 300px 0 0 500px;
         }
 
         .sun {
             position: absolute;
             top: 15em;
-            left: 15em;
+            left: 17em;
             width: 10em;
             height: 10em;
             background-color: yellow;
@@ -44,7 +47,7 @@
             left: 5em;
             width: 30em;
             height: 30em;
-            animation: orbit 36.5s linear infinite;
+            animation: orbit 25.5s linear infinite;
         }
 
         .moon{
@@ -78,6 +81,85 @@
             background-color: silver;
         }
 
+        .mars,
+.moon2 {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+.moon3 {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.5px 0.5px 0 0;
+    border-radius: 50%;
+}
+
+.mars {
+    top: 5em;
+    left: 5em;
+    width: 40em; /* Genişliği artırın */
+    height: 45em; /* Yüksekliği artırın */
+    animation: orbit 45.5s linear infinite;
+}
+
+.moon2 {
+    top: 0;
+    right: 0;
+    width: 9em; /* Genişliği artırın (40em / 3) */
+    height: 9em; /* Yüksekliği artırın (40em / 3) */
+    animation: orbit 2.5s linear infinite;
+}
+
+.moon3 {
+    top: 0;
+    right: 0;
+    width: 11em; /* Genişliği artırın (40em / 3) */
+    height: 11em; /* Yüksekliği artırın (40em / 3) */
+    animation: orbit 2.7s linear infinite;
+}
+
+.mars::before,
+.moon2::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.mars::before,
+.moon3::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.mars::before {
+    top: 3.5em;
+    right: 2.8em;
+    width: 4.53em; /* Genişliği artırın (13.33em * 0.34) */
+    height: 4.53em; /* Yüksekliği artırın (13.33em * 0.34) */
+    background-color: coral;
+}
+
+.moon2::before {
+    top: 1em;
+    right: 0.2em;
+    width: 1em; /* Genişliği artırın (13.33em * 0.113) */
+    height: 1em; /* Yüksekliği artırın (13.33em * 0.113) */
+    background-color: silver;
+}
+
+.moon3::before {
+    top: 1em;
+    right: 0.2em;
+    width: 1.51em; /* Genişliği artırın (13.33em * 0.113) */
+    height: 1.51em; /* Yüksekliği artırın (13.33em * 0.113) */
+    background-color: silver;
+}
+
         @keyframes orbit {
             to {
                 transform: rotate(360deg);
@@ -92,6 +174,10 @@
         <div class="sun"></div>
         <div class="earth">
             <div class="moon"></div>
+        </div>
+        <div class="mars" >
+            <div class="moon2" ></div>
+            <div class="moon3" ></div>
         </div>
     </div>
 
